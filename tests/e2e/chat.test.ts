@@ -6,6 +6,18 @@ test.describe("Chat Page", () => {
     await expect(page.getByTestId("multimodal-input")).toBeVisible();
   });
 
+  test("shows ColdTea task guidance on empty chat", async ({ page }) => {
+    await page.goto("/");
+    await expect(
+      page.getByText("Get the best out of ColdTea tasks")
+    ).toBeVisible();
+    await expect(
+      page.getByText(
+        "Turn a rough task into scoped, testable, review-ready work."
+      )
+    ).toBeVisible();
+  });
+
   test("can type in the input field", async ({ page }) => {
     await page.goto("/");
     const input = page.getByTestId("multimodal-input");
