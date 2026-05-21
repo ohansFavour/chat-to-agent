@@ -1,3 +1,3 @@
 export function HelloWorld() {
-  return <div>Hello World</div>;
+  return <div>Hello world, from coldtea</div>;
 }
