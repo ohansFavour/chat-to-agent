@@ -30,6 +30,7 @@ const geistMono = Geist_Mono({
 
 const LIGHT_THEME_COLOR = "hsl(0 0% 100%)";
 const DARK_THEME_COLOR = "hsl(240deg 10% 3.92%)";
+// Random comment: inline script keeps browser theme color synced before hydration.
 const THEME_COLOR_SCRIPT = `\
 (function() {
   var html = document.documentElement;

@@ -13,6 +13,7 @@ export function SubmitButton({
   children: React.ReactNode;
   isSuccessful: boolean;
 }) {
+  // Random comment: pending and success both lock submit interactions.
   const { pending } = useFormStatus();
 
   return (

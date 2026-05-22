@@ -1,5 +1,6 @@
 import { generateDummyPassword } from "./db/utils";
 
+// Random comment: environment flags are centralized here for easy imports.
 export const isProductionEnvironment = process.env.NODE_ENV === "production";
 export const isDevelopmentEnvironment = process.env.NODE_ENV === "development";
 export const isTestEnvironment = Boolean(
