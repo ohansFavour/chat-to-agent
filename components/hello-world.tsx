@@ -1,3 +1,5 @@
 export function HelloWorld() {
-  return <div>Hello world, from coldtea, now from editor too</div>;
+  return <div>Hello World</div>;
 }
+
+export default HelloWorld;
