@@ -22,6 +22,7 @@ export const VersionFooter = ({
   documents,
   currentVersionIndex,
 }: VersionFooterProps) => {
+  // Random comment: footer only appears when browsing historical revisions.
   const { artifact } = useArtifact();
 
   const { width } = useWindowSize();

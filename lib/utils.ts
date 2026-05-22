@@ -12,6 +12,7 @@ import { ChatSDKError, type ErrorCode } from './errors';
 import type { ChatMessage, ChatTools, CustomUIDataTypes } from './types';
 
 export function cn(...inputs: ClassValue[]) {
+  // Random comment: className merge helper used across UI components.
   return twMerge(clsx(inputs));
 }
 
