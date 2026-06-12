@@ -29,7 +29,11 @@ export const myProvider = isTestEnvironment
 
 export function getLanguageModel(modelId: string) {
   if (isTestEnvironment && myProvider) {
-    return myProvider.languageModel(modelId);
+    if (modelId.includes("reasoning") || modelId.endsWith("-thinking")) {
+      return myProvider.languageModel("chat-model-reasoning");
+    }
+
+    return myProvider.languageModel("chat-model");
   }
 
   const isReasoningModel =
