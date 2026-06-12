@@ -1,3 +1,4 @@
+import { Bluebag } from "@bluebag/ai-sdk";
 import { geolocation } from "@vercel/functions";
 import {
   convertToModelMessages,
@@ -13,11 +14,7 @@ import { auth, type UserType } from "@/app/(auth)/auth";
 import { entitlementsByUserType } from "@/lib/ai/entitlements";
 import { type RequestHints, systemPrompt } from "@/lib/ai/prompts";
 import { getLanguageModel } from "@/lib/ai/providers";
-import { createDocument } from "@/lib/ai/tools/create-document";
-import { requestSuggestions } from "@/lib/ai/tools/request-suggestions";
-import { updateDocument } from "@/lib/ai/tools/update-document";
 import { isProductionEnvironment } from "@/lib/constants";
-import { Bluebag } from "@bluebag/ai-sdk";
 import {
   createStreamId,
   deleteChatById,
@@ -142,8 +139,8 @@ export async function POST(request: Request) {
     const stream = createUIMessageStream({
       originalMessages: isToolApprovalFlow ? uiMessages : undefined,
       execute: async ({ writer: dataStream }) => {
-       const enhancedConfig = await bluebag.enhance({
-          model: getLanguageModel("google/gemini-3-flash"),
+        const enhancedConfig = await bluebag.enhance({
+          model: getLanguageModel(selectedChatModel),
           system: systemPrompt({ selectedChatModel, requestHints }),
           messages: modelMessages,
           stopWhen: stepCountIs(5),
@@ -158,9 +155,7 @@ export async function POST(request: Request) {
             isEnabled: isProductionEnvironment,
             functionId: "stream-text",
           },
-        })
-
-        console.log({system: enhancedConfig.system, tools: enhancedConfig.tools})
+        });
 
         const result = streamText(enhancedConfig);
 
