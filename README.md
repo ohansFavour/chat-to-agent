@@ -1,10 +1,10 @@
 <a href="https://chat.vercel.ai/">
   <img alt="Next.js 14 and App Router-ready AI chatbot." src="app/(chat)/opengraph-image.png">
-  <h1 align="center">Agent RBP</h1>
+  <h1 align="center">ColdTea Task Coach</h1>
 </a>
 
 <p align="center">
-    Agent RBP is a free, open-source React Best Practices Agent built on 10+ years of real-world experience distilled in Skills powered by Bluebag
+    ColdTea Task Coach helps turn rough task ideas into scoped, testable, review-ready software work powered by Bluebag Skills.
 </p>
 
 <p align="center">

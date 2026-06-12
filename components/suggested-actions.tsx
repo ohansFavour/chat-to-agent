@@ -15,10 +15,10 @@ type SuggestedActionsProps = {
 
 function PureSuggestedActions({ chatId, sendMessage }: SuggestedActionsProps) {
   const suggestedActions = [
-    "Explain the best practices for renderender dependencies",
-    "Explain the best practices for client event listeners",
-    "How does server cache work in React?",
-    "How can I deploy a vercel app?",
+    "Help me tighten a ColdTea task brief",
+    "Turn acceptance criteria into a review checklist",
+    "Identify missing context before implementation starts",
+    "Summarize the checks needed before publishing",
   ];
 
   return (
